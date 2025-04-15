@@ -1,15 +1,24 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Application.Interfaces.Common;
 using Microsoft.EntityFrameworkCore;
-using Domain.Entities; // Это чтобы видеть equipment //
+using Domain.Entities; // чтобы видеть Entity, например Equipment
 
 namespace Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>, IApplicationDbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser> // Реализуем IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Equipment> Equipments { get; set; }
+        // DbSets
+        
+        public DbSet<Product> Products { get; set; }
+
+        // Реализуем SaveChangesAsync из IApplicationDbContext
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return base.SaveChangesAsync(cancellationToken);
+        }
     }
+
+   
 }

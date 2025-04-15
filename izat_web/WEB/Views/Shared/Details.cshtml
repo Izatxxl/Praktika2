@@ -1,0 +1,39 @@
+﻿@model Domain.Entities.Product
+
+@{
+    ViewData["Title"] = "Детали продукта";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Продукт</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Название</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-2">Категория</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Category)</dd>
+
+        <dt class="col-sm-2">Материал</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Material)</dd>
+
+        <dt class="col-sm-2">Вставка</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Insertion)</dd>
+
+        <dt class="col-sm-2">Вес</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Weight)</dd>
+
+        <dt class="col-sm-2">Цена</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Price)</dd>
+
+        <dt class="col-sm-2">Количество на складе</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.StockQuantity)</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Изменить</a>
+    <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+</p>
