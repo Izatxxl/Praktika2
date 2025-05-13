@@ -1,12 +1,12 @@
 ﻿@model Domain.Entities.Product
 
 @{
-    ViewData["Title"] = "Добавить продукт";
+    ViewData["Title"] = "Редактировать продукт"; // Для Edit.cshtml изменить на "Редактировать продукт"
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Edit">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
@@ -42,6 +42,6 @@
         <input asp-for="StockQuantity" class="form-control" />
         <span asp-validation-for="StockQuantity" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-success">Сохранить</button>
     <a asp-action="Index" class="btn btn-secondary">Отмена</a>
 </form>

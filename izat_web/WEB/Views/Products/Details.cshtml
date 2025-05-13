@@ -1,13 +1,11 @@
 ﻿@model Domain.Entities.Product
 
 @{
-    ViewData["Title"] = "Удалить продукт";
+    ViewData["Title"] = "Детали продукта";
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<h4>Вы уверены, что хотите удалить этот продукт?</h4>
-<hr />
 <dl class="row">
     <dt class="col-sm-2">Название</dt>
     <dd class="col-sm-10">@Model.Name</dd>
@@ -21,18 +19,15 @@
     <dt class="col-sm-2">Вставка</dt>
     <dd class="col-sm-10">@Model.Insertion</dd>
 
-    <dt class="col-sm-2">Вес (г)</dt>
+    <dt class="col-sm-2">Вес</dt>
     <dd class="col-sm-10">@Model.Weight</dd>
 
-    <dt class="col-sm-2">Цена (сом)</dt>
+    <dt class="col-sm-2">Цена</dt>
     <dd class="col-sm-10">@Model.Price</dd>
 
-    <dt class="col-sm-2">Количество на складе</dt>
+    <dt class="col-sm-2">Остаток</dt>
     <dd class="col-sm-10">@Model.StockQuantity</dd>
 </dl>
 
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Удалить</button>
-    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
-</form>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Редактировать</a>
+<a asp-action="Index" class="btn btn-secondary">Назад</a>

@@ -27,5 +27,9 @@ namespace Domain.Entities
 
         [Range(0, int.MaxValue)]
         public int StockQuantity { get; set; }
+        
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }
+
+

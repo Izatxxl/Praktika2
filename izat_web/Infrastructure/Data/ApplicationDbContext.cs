@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Domain.Entities; // чтобы видеть Entity, например Equipment
+using Domain.Entities;
+using System.Collections; // чтобы видеть Entity, например Equipment
 
 namespace Infrastructure.Data
 {
@@ -12,13 +13,17 @@ namespace Infrastructure.Data
         // DbSets
         
         public DbSet<Product> Products { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+       
 
-        // Реализуем SaveChangesAsync из IApplicationDbContext
-        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            return base.SaveChangesAsync(cancellationToken);
-        }
+
+
+  
+        
+
     }
 
-   
+
+
+
 }

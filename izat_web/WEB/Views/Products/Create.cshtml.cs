@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WEB.Views.Shared
+namespace WEB.Views.Products
 {
     public class CreateModel : PageModel
     {
